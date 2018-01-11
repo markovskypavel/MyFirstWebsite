@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+		<title>Snowboarding</title>
+		<link rel="shortcut icon" href="../resource/57.ico" type="image/x-icon">
+		<link href="../css/main.css" rel="stylesheet">
+		<script data-main="../js/feedback" src="../js/libs/require.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">		
+			<nav>
+				<ul class="top-menu">
+					<li><a href="/"><img src="../resource/logo.png" alt="SiteLogo" class="logoPic"></a></li>
+					<li><a href="/news/">NEWS</a></li>
+					<li><a href="/gallery/">GALLERY</a></li>
+					<li><a href="/about/">ABOUT</a></li>
+					<li class="active"><a href="/feedback/" class="active">FEEDBACK</a></li>
+				</ul>
+			</nav>
+						
+			<aside>			
+			</aside>
+			
+			<section>
+				<form name="Survey" >
+					<p>Enter your name:</p>
+					<INPUT type="text" NAME="name" placeholder="Your name">
+					
+					<p>What are your favourite sections?</p>
+					<table>
+						<tr>
+							<td><INPUT TYPE="checkbox" NAME="checkb" VALUE="Articles"><label for="checkb">Articles</label></td>
+							<td><INPUT TYPE="checkbox" NAME="checkb" VALUE="News"><label for="checkb">News</label></td>
+							<td><INPUT TYPE="checkbox" NAME="checkb" VALUE="History"><label for="checkb">History</label></td>
+						</tr>
+						<tr>
+							<td><INPUT TYPE="checkbox" NAME="checkb" VALUE="Pictures"><label for="checkb">Pictures</label></td>
+							<td><INPUT TYPE="checkbox" NAME="checkb" VALUE="Stories"><label for="checkb">Stories</label></td>
+							<td><INPUT TYPE="checkbox" NAME="checkb" VALUE="Community"><label for="checkb">Community</label></td>
+						</tr>
+					</table>
+					
+					<p>What is your mark to our website?</p>
+					<table>
+						<tr><td><INPUT TYPE="radio" NAME="radiob" VALUE="5"><label for="radiob">5 (Excellent)</label></td></tr>
+						<tr><td><INPUT TYPE="radio" NAME="radiob" VALUE="4"><label for="radiob">4 (Good)</label></td></tr>
+						<tr><td><INPUT TYPE="radio" NAME="radiob" VALUE="3" CHECKED><label for="radiob">3 (Normal)</label></td></tr>
+						<tr><td><INPUT TYPE="radio" NAME="radiob" VALUE="2"><label for="radiob">2 (Bad)</label></td></tr>
+						<tr><td><INPUT TYPE="radio" NAME="radiob" VALUE="1"><label for="radiob">1 (Awful)</label></td></tr>
+					</table>
+					
+					<p>Do you want to use it again?</p>
+					<select NAME="use" Size=3>
+						<option VALUE="Yes" selected>Yes
+						<option VALUE="No">No
+						<option VALUE="IDK">IDK
+					</select>
+					
+					<p>Would u like to advise it to your friend?</p>
+					<select NAME="advice" class="list">
+						<option VALUE="Yes" selected>Yes
+						<option VALUE="No">No
+						<option VALUE="IDK">IDK
+					</select>
+					
+					<p>Leave some words about our website:</p>
+					<textarea placeholder="Add your comment..." NAME="feed"></textarea><br>
+					
+					<INPUT TYPE="reset" class="red" NAME="reset" VALUE="Reset">
+					<INPUT TYPE="button" NAME="send" VALUE="Send">
+				</form>
+			</section>
+			
+			<footer>				
+				<div id="sitemap">
+					<h3>SITEMAP</h3>
+					<div>
+						<a href="/">HOME</a>
+						<a href="/news/">NEWS</a>
+					</div>
+					<div>
+						<a href="/gallery/">GALLERY</a>
+						<a href="/about/">ABOUT</a>
+					</div>
+					<div>
+						<a href="/feedback/">FEEDBACK</a>
+						<a href="https://twitter.com/markovskypavel">SUPPORT</a>
+					</div>
+				</div>
+				
+				<div id="social">
+					<h3>SOCIAL NETWORKS</h3>
+					<a href="https://twitter.com/markovskypavel" class="social-icon twitter"></a>
+					<a href="https://vk.com/markovskypavel" class="social-icon vk"></a>
+					<a href="https://www.youtube.com/channel/UC04fb6s2HDbm1_P_OIdhbPg" class="social-icon youtube"></a>
+					<a href="https://www.instagram.com/markovskypavel/" class="social-icon instagram"></a>
+				</div>
+				
+				<div id="footer-logo">
+					<a href="/"><img src="../resource/logo.png" alt="SiteLogo" class="footer-logo"></a>
+					<p>Markovsky Pavel, 572303</p>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>

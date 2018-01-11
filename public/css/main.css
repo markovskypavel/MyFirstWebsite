@@ -1,0 +1,844 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One');
+
+/* MAIN */
+body{
+	background-image: url('../resource/1.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	margin-top: 0;
+}
+/* Обёртка */
+#wrapper {
+	max-width: 970px;
+	min-width: 690px; /* Задать ширину (убрать для флекса) */
+	margin: auto;
+	box-sizing: border-box;
+	background-color: rgba(92, 99, 109, 0.85);
+	border-radius: 0 0 10px 10px;
+}
+
+
+/* =====ВЕРХНИЙ NAV===== */
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+/* Для всех ссылок в nav */
+nav a {
+	font: 22px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+/* Для верхнего меню */
+.top-menu {
+	background-color: rgba(36, 36, 36, 1);
+	display:flex;
+}
+.top-menu li {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	text-align:center;
+	flex-basis: auto; /* Определяет основу флекса, которая является начальным размером элемента */
+	flex-grow: 1; /* определяет, какую часть свободного пространства может занять контейнер, в соотношении с другими контейнерами */
+	height: 70px;
+}
+/* Для заполнения ссылкой ячейки списка */
+.top-menu li > a {
+	line-height: 70px; /* Высота слов в ссылке */
+	height:100%;
+	display:block;
+	text-decoration: none; /* Убрать подчёркивание при hover */
+	box-shadow:none;
+}
+/* Для логотипа (первая ячейка) */
+.top-menu li:first-child {
+	padding: 0;
+	margin: 0;
+	max-width: 240px;
+	text-align: left;
+}
+/* Для выбранного пункта меню */
+.top-menu li.active, .top-menu a.active {
+	background: #a6ccf1;
+	color: rgba(36, 36, 36, 1);
+}
+/* Логотип */
+.logoPic{
+	margin-top:7px;
+	width: 240px;
+	height: 55px;
+}
+
+
+/* =====SLIDER===== */
+#viewport {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+	margin-bottom: -5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+#slidewrapper {
+    position: relative;
+    width: calc(100% * 4);
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+    -o-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+    transition-timing-function: cubic-bezier(.67,.01,.23,1);
+}
+#slidewrapper, #slidewrapper ul, #slidewrapper li {
+    margin: 0;
+    padding: 0;
+}
+.slide {
+    width: calc(100%/4);
+    list-style: none;
+    display: inline;
+    float: left;
+}
+.slide-img {
+    width: 100%;
+}
+#nav-btns {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.slide-nav-btn {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 3px;
+}
+.slide-nav-btn:hover {
+    cursor: pointer;
+	width: 25px;
+	height:25px;
+}
+
+
+/* =====ASIDE===== */
+aside {
+	float: left;
+	width: 250px;
+}
+/* Для списка меню слева */
+nav li {
+	list-style-position: inside;
+	font: 18px 'Gloria Hallelujah', sans-serif;
+	color: #a6ccf1;
+	padding: 10px;
+}
+.aside-menu li {
+	list-style-type: square;
+	border-top: 1px solid #a6ccf1;
+}
+.aside-menu li:first-child {
+	border: none;
+}
+/* Для квадратика */
+.aside-menu li.active {
+	color: white;
+}
+/* Для текста */
+.aside-menu a.active {
+	color: white;
+}
+/* При наведении меняется курсор */
+.aside-menu a:hover {
+	cursor: pointer;
+	color: white;
+}
+/* Для ссылок в меню слева */
+.aside-menu a{
+	font: 16px 'Francois One', sans-serif;
+	color: #a6ccf1;
+	text-decoration: none;
+	box-shadow:none;
+}
+/* Личный кабинет */
+aside h2 {
+	background: #a6ccf1;
+	font: 20px 'Francois One', sans-serif;
+	color: rgba(92, 99, 109, 1);
+	padding: 10px;
+	margin: 30px 0 0 0;
+}
+/* Поля заполнения логина/регистрация*/
+.auth INPUT[type ="text"], .reg INPUT[type ="text"]{
+	width:160px;
+	height:30px;
+	margin: 0;
+	padding:3px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: white;
+}
+.auth INPUT[type ="text"]:focus, .reg INPUT[type ="text"]:focus {
+	border: 2px solid #a6ccf1;
+	border-left:none;
+	color: #a6ccf1;	
+}
+.auth INPUT[type ="text"]:focus::placeholder, .reg INPUT[type ="text"]:focus::placeholder {
+	opacity:0;
+}
+/* Поле пароля */
+.auth INPUT[type ="password"], .reg INPUT[type ="password"]{
+	width:160px;
+	height:30px;
+	margin: 0;
+	padding:3px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: white;
+}
+.auth INPUT[type ="password"]:focus, .reg INPUT[type ="password"]:focus {
+	border: 2px solid #a6ccf1;
+	border-left:none;
+	color: #a6ccf1;	
+}
+.auth INPUT[type ="password"]:focus::placeholder, .reg INPUT[type ="password"]:focus::placeholder {
+	opacity:0;
+}
+/* Кнопка подтверждения для авторизации/регистрации */
+.auth INPUT[type ="submit"], .reg INPUT[type ="submit"] {
+	width:80px;
+	height:30px;
+	padding:3px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+	float:right;
+}
+.auth INPUT[type ="submit"]:hover, .reg INPUT[type ="submit"]:hover {
+	background: #a6ccf1;
+	color: #262626;
+}
+.auth INPUT[type ="submit"]:active, .reg INPUT[type ="submit"]:active{
+	background: white;
+	color: #262626;
+}
+/* Кнопка для блока с приветствием после авторизации */
+.authorized INPUT[type ="submit"] {
+	width:80px;
+	height:30px;
+	padding:3px;
+	box-sizing: border-box;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+.authorized INPUT[type ="submit"]:hover {
+	background: #a6ccf1;
+	color: #262626;
+}
+.authorized INPUT[type ="submit"]:active {
+	background: #8A0000;
+	color: #262626;
+}
+/* Отмена обтекания (не использовал) */
+.clear{
+	clear:both;
+}
+
+
+/* =====SECTION===== */
+section {
+	margin-left: 280px;
+	padding-bottom: 50px;
+}
+blockquote {
+	margin: 0;
+	background: #a6ccf1;
+	padding: 10px 20px;
+}
+blockquote p {
+	color: rgba(92, 99, 109, 1);
+	font: 20px 'Francois One', sans-serif;
+	margin:0;
+	text-align: right;
+}
+blockquote cite {
+	display: block;
+	font-size: 15px;
+	font-style: italic;
+	color: rgba(92, 99, 109, 1);
+	margin: 0;
+	text-align: right;
+}
+/* Текст */
+p{
+	margin:20px 20px 0 0;
+	font: 16px 'Francois One', sans-serif;
+	color: white;
+	text-align:justify;
+}
+/* Знаменитые сноубордисты */
+section > h2 {
+	background: #a6ccf1;
+	font: 20px 'Francois One', sans-serif;
+	color: rgba(92, 99, 109, 1);
+	padding:0 20px 0 0;
+	margin: 23px 0 0 0;
+	text-align:right;
+}
+figure {
+	display: inline-block; /* Размещение в ряд */
+	margin: 0;
+	margin-left:1px; /* Для outline, тк он не занимает места, в отличие от border */
+}
+figure img {
+	display: block;
+	outline: 1px solid #a6ccf1;
+	/* Размеры картинок */
+	width: 100px;
+	height: 100px;
+}
+/* Имена сноубордистов под картинкой */
+figure figcaption {
+	margin-top: 5px;
+	text-align:left;
+}
+/* Ссылки на сноубордистов */
+a{
+	font: 16px 'Francois One', sans-serif;
+	color: white;
+	text-decoration: none;
+}
+a:hover{
+	color: #a6ccf1;
+}
+/* Подписи professional/legend */
+figure figcaption span {
+	display: block;
+	font-size: 14px;
+	color: #a6ccf1;
+	text-align:right;
+	font-style: italic;/*  Подпись под именами */
+	line-height: 10px;
+}
+/* Если экран меньше 920px, то применится центрирование */
+@media(max-width:920px){
+	.team-row{
+	text-align: center;
+	}
+}
+.team-row figure:last-child{
+	margin-right: 100px;
+}
+/* Пространство над картинкой */
+.team-row figure {
+	margin-top: 20px;
+}
+/* Расстояние между картинками */
+.team-row figure + figure {
+	margin-left: 100px;
+}
+
+
+/* =====FOOTER===== */
+footer {
+	display:inline-block; /* <==>clear:both; */
+	width:100%;
+	height: 100px;
+	margin: auto;
+	padding: 50px 0 0 0;
+}
+/* Sitemap/social networks */
+footer h3 {
+	font: 10px 'Francois One', sans-serif;
+	color: #a6ccf1;
+	border-bottom: 1px solid #a6ccf1;
+	margin: 0 0 10px 0;
+}
+/* Markovsky Pavel */
+footer p {
+	line-height: 12px; /* Для уменьшения толщины линии текста */
+	font-size:15px;
+	margin: 0 2px 0 0;
+	text-align: right;
+	color: #a6ccf1;
+}
+#social {
+	width: 210px;
+	height: 90px;
+	float: left;
+	margin: 0 5px 0 20px;
+}
+#sitemap{
+	width: 230px;
+	height: 90px;
+	float: left;
+	margin: 0 20px 0 20px;
+}
+#sitemap div {
+	display: inline-block; /* Для расположения ссылок в строчку */
+}
+/* Расстояние между ссылками в блоке sitemap */
+#sitemap div + div {
+	margin-left: 12px;
+}
+#sitemap a {
+	color: #a6ccf1;
+	display: block;
+	text-decoration: none;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+#sitemap a:hover {
+	text-decoration: underline;
+}
+#social a:hover {
+	animation: spinningLink;
+	animation-delay: 0s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+@keyframes spinningLink {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.social-icon {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	margin-right:15px;
+}
+.twitter {
+	background: url(../resource/5.png) no-repeat;
+	background-size: cover;
+}
+.vk {
+	background: url(../resource/6.png) no-repeat;
+	background-size: cover;
+}
+.youtube {
+	background: url(../resource/7.png) no-repeat;
+	background-size: cover;
+}
+.instagram {
+	background: url(../resource/8.png) no-repeat;
+	background-size: cover;
+}
+/* Логотип внизу */
+#footer-logo {
+	margin: 40px 20px 0 0;
+	float: right;
+	text-align: right;
+}
+.footer-logo {
+	width: 120px;
+	height: 30px;	
+}
+
+
+/* =====FEEDBACK===== */
+/* Блок с комментариями */
+.comments{
+	margin: 0;
+	padding: 20px 10px;
+	border-top: 1px solid #a6ccf1;
+}
+.comments:first-child {
+	border: none;
+}
+/* Отзыв */
+.comments p {
+	font: 16px 'Francois One', sans-serif;
+	color: white;
+	margin:0;
+	text-align: justify;
+}
+/* Имя */
+.comments cite {
+	display: block;
+	font-size: 14px;
+	color: #a6ccf1;
+	text-align:right;
+	font-style: italic;/*  Подпись под комментариями */
+	line-height: 10px;
+}
+section > form{
+	border-left: 1px solid #a6ccf1;
+}
+/* Вопросы к форме */
+form p{
+	margin:0 0 0 10px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font: 16px 'Francois One', sans-serif;
+	color: white;
+	text-align:justify;	
+}
+/* 1 вопрос к форме */
+form p:first-child{
+	padding-top: 20px;
+}
+/* Ввод имени */
+INPUT[type ="text"]{
+	width:160px;
+	height:30px;
+	margin: 0 0 5px 10px;
+	padding:3px;
+	box-sizing: border-box;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: white;
+}
+INPUT[type ="text"]:focus{
+	border: 2px solid #a6ccf1;
+	color: #a6ccf1;	
+}
+INPUT[type ="text"]:focus::placeholder{
+	opacity:0;
+}
+INPUT[type ="checkbox"]{
+	width:15px;
+	height:15px;
+	box-sizing: border-box;
+	margin: 0 0 5px 10px;
+	outline: none;
+	vertical-align:middle;
+}
+/* Слова в checkbox */
+input[type="checkbox"] + label {
+	padding-left:2px;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+INPUT[type ="radio"]{
+	width:15px;
+	height:15px;
+	box-sizing: border-box;
+	margin: 0 0 5px 10px;
+	outline: none;
+	vertical-align:middle;
+}
+/* Слова в radio */
+input[type="radio"] + label {
+	padding-left:2px;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+/* Толстый список */
+select{
+	width:160px;
+	height:77px;
+	padding:3px;
+	box-sizing: border-box;
+	margin: 0 0 5px 10px;
+	background: #262626;
+	border: 2px solid #a6ccf1;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+option:checked {
+    box-shadow: 0 0 10px 100px #a6ccf1 inset;
+}
+/* Тонкий список */
+select.list{
+	width:160px;
+	height:30px;
+	padding:3px;
+	box-sizing: border-box;
+	margin: 0 0 5px 10px;
+	background: #262626;
+	border: 2px solid #a6ccf1;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+option.list:hover {
+    box-shadow: 0 0 10px 100px #a6ccf1 inset;
+}
+/* Комментарий */
+textarea{
+	width:300px;
+	height:77px;
+	resize: none;
+	padding:3px;
+	box-sizing: border-box;
+	margin: 0 0 5px 10px;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: white;
+}
+textarea:focus{
+	border: 2px solid #a6ccf1;
+	color: #a6ccf1;		
+}
+textarea:focus::placeholder{
+	opacity:0;
+}
+/* Кнопки отправки и сброса */
+INPUT[type ="button"], INPUT[type="reset"]{
+	width:80px;
+	height:30px;
+	padding:3px;
+	margin: 10px 0 20px 10px;
+	box-sizing: border-box;
+	background: #262626;
+	border: none;
+	outline: none;
+	font: 15px 'Francois One', sans-serif;
+	color: #a6ccf1;
+}
+INPUT[type ="button"]:hover{
+	background: #a6ccf1;
+	color: #262626;
+}
+INPUT[type ="button"]:active{
+	background: white;
+	color: #262626;
+}
+INPUT[type ="button"].red:hover, INPUT[type="reset"]:hover{
+	background: #a6ccf1;
+	color: #262626;
+}
+INPUT[type ="button"].red:active, INPUT[type="reset"]:active{
+	background: #8A0000;
+	color: #262626;
+}
+
+
+/* =====GALLERY===== */
+/* Убрать расстояние слева от section */
+section.gallery {
+	margin-left: 0;
+}
+/* Расположение блоков */
+.gallery > div{
+	text-align: center;
+}
+/* Пространство над картинкой */
+.gallery figure {
+	margin:initial;
+	margin-top: 20px;
+}
+/* Расстояние между картинками */
+.gallery figure + figure {
+	margin-left: 35px;
+}
+.gallery img {
+	/* Размеры картинок */
+	width: 192px;
+	height: 108px;
+	/* 	Курсор при наведении */
+	cursor: pointer;
+}
+/* Увеличение границы картинки */
+.gallery img:hover {
+	animation: borderPictures;
+	animation-delay: 0s;
+	animation-duration: 0.3s;
+/* 	Картинка останется после анимации */
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+@keyframes borderPictures {
+	100% {
+		outline: 3px solid #a6ccf1;
+	}
+}
+
+
+/* =====NEWS===== */
+/* Сводка, которая остается на месте при прокрутке */
+.news-aside{
+	position: fixed;
+	width: 240px;
+}
+/* Дата новостей */
+.news > h2 {
+	background: #a6ccf1;
+	font: 20px 'Francois One', sans-serif;
+	color: rgba(92, 99, 109, 1);
+	padding:0 10px 0 20px;
+	margin: 15.2px 0 0 0;
+	text-align:left;
+}
+/* Текст */
+.news p{
+	margin:20px 20px 0 0;
+	font: 16px 'Francois One', sans-serif;
+	color: white;
+	text-align:justify;
+}
+/* Картинки в новостях */
+.news figure > img {
+	display: block;
+	outline: 1px solid #a6ccf1;
+	margin-top: 20px;
+	cursor:pointer;
+	/* Размеры картинок */
+	width: 192px;
+	height: 108px;
+}
+/* При наведении увеличивается граница картинки новостей */
+.news figure > img:hover{
+	animation: borderPictures;
+	animation-delay: 0s;
+	animation-duration: 0.3s;
+/* 	Картинка останется после анимации */
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+/* Расстояние между картинками */
+.news figure + figure {
+	margin-left: 20px;
+}
+/* Блок для центрирования картинок */
+.news-pictures{
+	text-align:center;
+}
+/* Если экран меньше 760px, то картинки смещаются */
+@media(max-width:760px){
+	.news-pictures {
+		text-align:left;
+	}
+	.news figure + figure {
+	margin-left: 0;
+	}
+}
+
+
+/* =====ABOUT===== */
+/* FOUNDER */
+aside.founder{
+	width: 240px;
+	padding-bottom: 50px;
+}
+.founder > h2 {
+	background: #a6ccf1;
+	font: 20px 'Francois One', sans-serif;
+	color: rgba(92, 99, 109, 1);
+	padding: 10px;
+	margin: 20px 0 0 0;
+	text-align: center;
+}
+.founder figure > img {
+	display: block;
+	outline: 1px solid #a6ccf1;
+	/* Размеры картинок */
+	width: 238px;
+	height: 238px;
+}
+/* Имя создателя под картинкой */
+.founder figure figcaption {
+	margin-top: 5px;
+	text-align:center;
+}
+/* Подпись founder of Burton */
+.founder figure figcaption > span {
+	display: block;
+	font-size: 14px;
+	color: #a6ccf1;
+	text-align:center;
+	font-style: italic;/*  Подпись под именами */
+	line-height: 10px;
+}
+/* Текст про компанию */
+.about p{
+	margin:16px 20px 0 0;
+	font: 16px 'Francois One', sans-serif;
+	color: white;
+	text-align:justify;
+}
+
+
+/* =====МОДАЛЬНОЕ ОКНО===== */
+/* Тёмный фон */
+.overlay {
+	background: #000;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1000;
+	opacity: .5;
+}
+/* Картинка на тёмном фоне */
+.visible {
+	background-size: cover;
+	position: fixed;
+	left: 50%;
+	right: 50%;
+	top: 10%;
+	margin-left: -480px;
+	overflow: hidden;
+	z-index: 2000;
+	width: 960px;
+	height: 540px;
+	padding: 0px;
+	cursor:pointer;
+	outline: 5px solid #a6ccf1;
+}
+/* Затемнение */
+.visible:hover {
+	animation: opacityPictures;
+	animation-delay: 0s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+@keyframes opacityPictures {
+	100% {
+		opacity: .8;
+	}
+}
+/* Если ширина экрана меньше 760px, то картинки сдвигаются */
+@media(max-width:760px){
+	.visible {
+		top: 15%;
+		margin-left: -320px;
+		width: 640px;
+		height: 360px;
+	}
+}
+/* Блок со всплывающим окном */
+#win{
+	opacity: 0;
+}
